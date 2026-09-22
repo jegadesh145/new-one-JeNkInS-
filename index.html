@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jenkins CI/CD Demo Website</title>
+  <meta name="description" content="A simple single-page website created to learn Git, GitHub, Jenkins and automated deployment." />
+
+  <!-- This line connects the HTML page to the CSS file -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       1. NAVIGATION BAR (Home / About / Contact)
+       ============================================================ -->
+  <header class="navbar">
+    <nav class="nav container" aria-label="Main navigation">
+
+      <a href="#home" class="nav-logo">Jenkins<span>Demo</span></a>
+
+      <!-- Hamburger button - only visible on small (mobile) screens -->
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         2. HERO SECTION
+         ============================================================ -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="hero-badge">CI / CD Learning Project</p>
+
+        <h1>Welcome to My Jenkins CI/CD Project</h1>
+
+        <p class="hero-text">
+          This website is being used to learn CI/CD (Continuous Integration and
+          Continuous Delivery). Whenever I push new code to GitHub, Jenkins
+          automatically builds it and deploys it for me.
+        </p>
+
+        <!-- The JavaScript file listens for a click on this button -->
+        <button class="btn" id="learnMoreBtn" type="button">Learn More</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. ABOUT SECTION
+         ============================================================ -->
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About This Project</h2>
+        <p class="section-text">
+          This is a simple website created to learn Git, GitHub, Jenkins, and automated deployment.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Git</h3>
+            <p>Git keeps track of every change I make, so I can go back to an older version at any time.</p>
+          </article>
+
+          <article class="card">
+            <h3>GitHub</h3>
+            <p>GitHub stores my project online and notifies Jenkins whenever I push new commits.</p>
+          </article>
+
+          <article class="card">
+            <h3>Jenkins</h3>
+            <p>Jenkins runs a pipeline that builds my files and deploys them automatically.</p>
+          </article>
+        </div>
+
+        <h3 class="steps-title">How the pipeline works</h3>
+        <ol class="steps">
+          <li><strong>Code:</strong> I edit the HTML, CSS and JavaScript files.</li>
+          <li><strong>Commit:</strong> I save the changes with Git.</li>
+          <li><strong>Push:</strong> I upload the commits to GitHub.</li>
+          <li><strong>Build:</strong> Jenkins detects the push and runs the build job.</li>
+          <li><strong>Deploy:</strong> Jenkins publishes the website automatically.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. CONTACT SECTION
+         ============================================================ -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-text">
+          Send me a message. This form is a demo only &mdash; there is no server or
+          database, so nothing is really sent.
+        </p>
+
+        <!-- novalidate is not used: the browser checks "required" fields first -->
+        <form class="form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+
+          <!-- JavaScript writes the success / error text inside this paragraph -->
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       5. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Jenkins CI/CD Demo Website &mdash; built with plain HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- This line connects the HTML page to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
